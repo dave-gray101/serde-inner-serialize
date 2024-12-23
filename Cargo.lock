@@ -141,6 +141,17 @@ dependencies = [
 ]
 
 [[package]]
+name = "serde_derive"
+version = "1.0.216"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "46f859dbbf73865c6627ed570e78961cd3ac92407a2d117204c49232485da55e"
+dependencies = [
+ "proc-macro2",
+ "quote",
+ "syn 2.0.91",
+]
+
+[[package]]
 name = "serde_inner_serialize"
 version = "0.1.0"
 dependencies = [
@@ -168,17 +179,6 @@ dependencies = [
  "proc-macro-error",
  "proc-macro2",
  "serde_inner_serialize_core",
-]
-
-[[package]]
-name = "serde_derive"
-version = "1.0.216"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "46f859dbbf73865c6627ed570e78961cd3ac92407a2d117204c49232485da55e"
-dependencies = [
- "proc-macro2",
- "quote",
- "syn 2.0.91",
 ]
 
 [[package]]

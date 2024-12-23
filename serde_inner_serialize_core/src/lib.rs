@@ -16,6 +16,9 @@ pub fn inner_serializable_core(input: TokenStream) -> TokenStream {
 
     let input = parse2::<DeriveInput>(input).unwrap();
     let name = &input.ident;
+    let generics = &input.generics;
+    let (impl_generics, ty_generics, where_clause) = &generics.split_for_impl();
+
     let count = if let syn::Data::Struct(data) = &input.data {
         data.fields.iter().count()
     } else {
@@ -35,7 +38,7 @@ pub fn inner_serializable_core(input: TokenStream) -> TokenStream {
     };
 
     let expanded = quote! {
-        impl InnerSerializableTrait for #name {
+        impl #impl_generics InnerSerializableTrait for #name #ty_generics #where_clause {
             fn count_fields() -> usize {
                 #count
             }
