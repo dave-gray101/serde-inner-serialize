@@ -49,20 +49,19 @@ fn demo() {
             state.serialize_field("constant_fake", "fake")?;
             self.inner.inner_serialize(&mut state).unwrap();
             state.end()
-            // Err(serde::ser::Error::custom(format!("unable to serialize {}", std::any::type_name_of_val(&self.inner))))
         }
         
     }
 
     let baz_string = "baz".to_string();
 
-    let test = Test::new(1, "bar".to_string(), &baz_string);
+    let test = Test::new(1, "bar2".to_string(), &baz_string);
 
     let outerbox = OuterBox { inner: &test };
 
     assert_eq!(Test::count_fields(), 3);
     let serialized_result = serde_json::to_string(&outerbox).unwrap();
     println!("{}", serialized_result);
-    assert_ne!(serialized_result, "");
+    assert_eq!(serialized_result, "{\"artificial_property\":\"1\\\\bar2\",\"constant_fake\":\"fake\",\"foo\":1,\"bar\":\"bar2\",\"baz\":\"baz\"}");
 
 }
