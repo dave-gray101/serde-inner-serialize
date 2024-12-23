@@ -8,6 +8,8 @@ members = ["serde_inner_serialize_core", "serde_inner_serialize_derive"]
 
 [dev-dependencies]
 trybuild = "1.0"
+serde = { version = "1.0.216" }
+serde_json = "1.0.134"
 
 [dependencies]
 serde_inner_serialize_derive = { path = "serde_inner_serialize_derive" }
