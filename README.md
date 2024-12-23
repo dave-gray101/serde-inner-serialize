@@ -3,12 +3,14 @@
 
 This library is designed to add some helper methods to a struct making it easier to manually serialize its fields.
 
+```{rust}
 InnerSerializableTraitpub trait InnerSerializableTrait {
     fn count_fields() -> usize;
     fn inner_serialize<S>(&self, state: &mut S) -> Result<(), S::Error>
     where
         S: serde::ser::SerializeStruct;
 }
+```
 
 A proper example will follow soon.
 
