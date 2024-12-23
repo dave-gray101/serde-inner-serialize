@@ -39,6 +39,7 @@ pub fn inner_serializable_core(input: TokenStream) -> TokenStream {
 
     let expanded = quote! {
         impl #impl_generics InnerSerializableTrait for #name #ty_generics #where_clause {
+        
             fn count_fields() -> usize {
                 #count
             }
