@@ -1,5 +1,5 @@
 [package]
-name = "serde-inner-serialize-core"
+name = "serde_inner_serialize_core"
 version = "0.1.0"
 edition = "2021"
 

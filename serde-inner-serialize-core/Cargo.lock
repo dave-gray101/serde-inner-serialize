@@ -107,7 +107,7 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde-inner-serialize-proc-macro"
+name = "serde_inner_serialize-proc-macro"
 version = "0.1.0"
 dependencies = [
  "colored-diff",

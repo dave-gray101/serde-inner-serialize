@@ -141,16 +141,16 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde-inner-serialize"
+name = "serde_inner_serialize"
 version = "0.1.0"
 dependencies = [
- "serde-inner-serialize-core",
- "serde-inner-serialize-derive",
+ "serde_inner_serialize_core",
+ "serde_inner_serialize_derive",
  "trybuild",
 ]
 
 [[package]]
-name = "serde-inner-serialize-core"
+name = "serde_inner_serialize_core"
 version = "0.1.0"
 dependencies = [
  "colored-diff",
@@ -162,12 +162,12 @@ dependencies = [
 ]
 
 [[package]]
-name = "serde-inner-serialize-derive"
+name = "serde_inner_serialize_derive"
 version = "0.1.0"
 dependencies = [
  "proc-macro-error",
  "proc-macro2",
- "serde-inner-serialize-core",
+ "serde_inner_serialize_core",
 ]
 
 [[package]]

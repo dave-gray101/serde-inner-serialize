@@ -1,14 +1,14 @@
 [package]
-name = "serde-inner-serialize"
+name = "serde_inner_serialize"
 version = "0.1.0"
 edition = "2021"
 
 [workspace]
-members = ["serde-inner-serialize-core", "serde-inner-serialize-derive"]
+members = ["serde_inner_serialize_core", "serde_inner_serialize_derive"]
 
 [dev-dependencies]
 trybuild = "1.0"
 
 [dependencies]
-serde-inner-serialize-derive = { path = "serde-inner-serialize-derive" }
-serde-inner-serialize-core = { path = "serde-inner-serialize-core" }
+serde_inner_serialize_derive = { path = "serde_inner_serialize_derive" }
+serde_inner_serialize_core = { path = "serde_inner_serialize_core" }

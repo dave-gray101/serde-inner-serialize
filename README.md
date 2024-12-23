@@ -1,4 +1,4 @@
-# serde-inner-serialize macro crate
+# serde_inner_serialize macro crate
 ## Helper for custom Serializers
 
 This library is designed to add some helper methods to a struct making it easier to manually serialize its fields.
