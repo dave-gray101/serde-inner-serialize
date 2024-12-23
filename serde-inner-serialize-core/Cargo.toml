@@ -1,0 +1,14 @@
+[package]
+name = "serde-inner-serialize-core"
+version = "0.1.0"
+edition = "2021"
+
+[dev-dependencies]
+colored-diff = "0.2.3"
+
+[dependencies]
+syn = { version = "2.0.91", features = ["extra-traits", "full", "fold"] }
+quote = "1.0.37"
+proc-macro2 = "1.0.92"
+proc-macro-error = "1.0"
+serde = { version = "1.0.216", features = ["derive"] }

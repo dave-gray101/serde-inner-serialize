@@ -1,0 +1,12 @@
+[package]
+name = "serde-inner-serialize-derive"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+proc-macro = true
+
+[dependencies]
+serde-inner-serialize-core = { path = "../serde-inner-serialize-core" }
+proc-macro-error = "1.0"
+proc-macro2 = "1.0"
