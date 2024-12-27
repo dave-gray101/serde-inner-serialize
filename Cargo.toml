@@ -7,6 +7,7 @@ edition = "2021"
 members = ["serde_inner_serialize_core", "serde_inner_serialize_derive"]
 
 [features]
+default=[]
 const_type_name = ["serde_inner_serialize_core/const_type_name"]
 
 [dev-dependencies]
