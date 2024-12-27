@@ -1,5 +1,3 @@
-// use const_format::{concatcp, formatcp}
-
 use serde::Serialize;
 use serde::ser::SerializeStruct;
 use serde_inner_serialize::{InnerSerializable, InnerSerializableTrait, OuterSerializable, OuterSerializableTrait};
