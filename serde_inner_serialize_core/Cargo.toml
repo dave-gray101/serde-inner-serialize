@@ -3,6 +3,9 @@ name = "serde_inner_serialize_core"
 version = "0.1.0"
 edition = "2021"
 
+[features]
+const_type_name = []
+
 [dev-dependencies]
 colored-diff = "0.2.3"
 
@@ -12,3 +15,4 @@ quote = "1.0.37"
 proc-macro2 = "1.0.92"
 proc-macro-error = "1.0"
 serde = { version = "1.0.216" }
+const_format = "0.2"

@@ -6,11 +6,15 @@ edition = "2021"
 [workspace]
 members = ["serde_inner_serialize_core", "serde_inner_serialize_derive"]
 
+[features]
+const_type_name = ["serde_inner_serialize_core/const_type_name"]
+
 [dev-dependencies]
 trybuild = "1.0"
 serde = { version = "1.0.216" }
 serde_json = "1.0.134"
+const_format = "0.2"
 
 [dependencies]
 serde_inner_serialize_derive = { path = "serde_inner_serialize_derive" }
-serde_inner_serialize_core = { path = "serde_inner_serialize_core" }
+serde_inner_serialize_core = { path = "serde_inner_serialize_core", default-features = false }
