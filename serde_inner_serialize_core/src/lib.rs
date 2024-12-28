@@ -26,6 +26,16 @@ pub fn inner_serializable_core(input: TokenStream) -> TokenStream {
     let generics = &input.generics;
     let (impl_generics, ty_generics, where_clause) = &generics.split_for_impl();
 
+    let type_name_impl = if cfg!(feature = "const_type_name") {
+        quote! {
+            const TYPE_NAME: &'static str = std::any::type_name::<#name>();
+        }
+    } else {
+        quote! {
+            const TYPE_NAME: &'static str = stringify!(#name);
+        }
+    };
+
     let count = if let syn::Data::Struct(data) = &input.data {
         data.fields.iter().count()
     } else {
@@ -48,10 +58,7 @@ pub fn inner_serializable_core(input: TokenStream) -> TokenStream {
 
         impl #impl_generics InnerSerializableTrait for #name #ty_generics #where_clause {
     
-        #[cfg(feature = "const_type_name")]
-            const TYPE_NAME: &'static str = std::any::type_name::<#name>();
-        #[cfg(not(feature = "const_type_name"))]
-            const TYPE_NAME: &'static str = stringify!(#name);  
+            #type_name_impl
 
             fn count_fields() -> usize {
                 #count
@@ -92,13 +99,20 @@ pub fn outer_serializable_core(input: TokenStream) -> TokenStream {
     let turbofish = ty_generics.as_turbofish();
     let ty_inner_type = extract_types_from_turbofish(&turbofish)[0].clone();
 
+    let type_name_impl = if cfg!(feature = "const_type_name") {
+        quote! {
+            const TYPE_NAME: &'static str = std::any::type_name::<#name>();
+        }
+    } else {
+        quote! {
+            const TYPE_NAME: &'static str = stringify!(#name);
+        }
+    };
+
     let expanded = quote! {
         impl #impl_generics OuterSerializableTrait<#ty_inner_type> for #name #ty_generics #where_clause {
     
-            #[cfg(feature = "const_type_name")]
-                const TYPE_NAME: &'static str = std::any::type_name::<#name>();
-            #[cfg(not(feature = "const_type_name"))]
-                const TYPE_NAME: &'static str = stringify!(#name);
+            #type_name_impl
 
             fn _get_full_type_name(&self) -> String {
                 let mut s = String::from(#name #turbofish :: TYPE_NAME);
