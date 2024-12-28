@@ -56,7 +56,7 @@ pub fn inner_serializable_core(input: TokenStream) -> TokenStream {
     
     let expanded = quote! {      
 
-        impl #impl_generics InnerSerializableTrait for #name #ty_generics #where_clause {
+        impl #impl_generics serde_inner_serialize::InnerSerializableTrait for #name #ty_generics #where_clause {
     
             #type_name_impl
 

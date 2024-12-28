@@ -2,6 +2,10 @@
 name = "serde_inner_serialize_derive"
 version = "0.1.0"
 edition = "2021"
+authors = ["Dave Lee"]
+description = "A package of proc macros to assist in serializing nested structures flatly via serde"
+repository = "https://github.com/dave-gray101/serde-inner-serialize"
+license = "MIT"
 
 [lib]
 proc-macro = true
