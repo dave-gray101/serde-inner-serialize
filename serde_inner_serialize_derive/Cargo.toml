@@ -11,6 +11,6 @@ license = "MIT"
 proc-macro = true
 
 [dependencies]
-serde_inner_serialize_core = { path = "../serde_inner_serialize_core" }
+serde_inner_serialize_core = "0.1"
 proc-macro-error = "1.0"
 proc-macro2 = "1.0"
