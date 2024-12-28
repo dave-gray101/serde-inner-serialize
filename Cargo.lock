@@ -153,7 +153,7 @@ dependencies = [
 
 [[package]]
 name = "serde_inner_serialize"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "serde",
  "serde_inner_serialize_core",
@@ -164,7 +164,7 @@ dependencies = [
 
 [[package]]
 name = "serde_inner_serialize_core"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "colored-diff",
  "proc-macro-error",
@@ -176,7 +176,7 @@ dependencies = [
 
 [[package]]
 name = "serde_inner_serialize_derive"
-version = "0.1.0"
+version = "0.1.1"
 dependencies = [
  "proc-macro-error",
  "proc-macro2",
